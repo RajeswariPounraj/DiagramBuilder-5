@@ -29,18 +29,26 @@ function saveDiagram(data, filename) {
         a.remove();
     }
 }
+UtilityMethods_hideElements = function (elementType, diagramType) {
+    var diagramContainer = document.getElementsByClassName('diagrambuilder-container')[0];
+    if (diagramContainer.classList.contains(elementType)) {
+        if (!(diagramType === 'mindmap-diagram' || diagramType === 'orgchart-diagram')) {
+            diagramContainer.classList.remove(elementType);
+        }
+    }
+    else {
+        diagramContainer.classList.add(elementType);
+    }
+};
 function hideMenubar() {
     UtilityMethods_hideElements('hide-menubar');
 }
-
 function getHyperLinkValueFromDocument(id, attribute) {
     return document.getElementById(id).value;
 }
-
 function click() {
     document.getElementById('UploadFiles').click();
 }
-
 function hideElements(elementType) {
     var diagramContainer = document.getElementsByClassName('diagrambuilder-container')[0];
     if (diagramContainer.classList.contains(elementType)) {
@@ -49,7 +57,6 @@ function hideElements(elementType) {
         diagramContainer.classList.add(elementType);
     }
 }
-
 function click() {
     document.getElementById('defaultfileupload').click();
 }

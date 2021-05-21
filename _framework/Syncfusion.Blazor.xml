@@ -8279,7 +8279,34 @@
             </summary>
             <remarks>Methods in this class are chainable.</remarks>
         </member>
-        <member name="P:Syncfusion.Blazor.Data.Query.Queries  <member name="P:Syncfusion.Blazor.Data.Query.Expands">
+        <member name="P:Syncfusion.Blazor.Data.Query.Queries">
+            <summary>
+            Provides various method that allow user to generate query. 
+            These queries is used by <see cref="T:Syncfusion.Blazor.Data.SfDataManager"/> to process given data source and returns resultant records.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Data.Query.Key">
+            <summary>
+            Specifies the primary key value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Data.Query.FKey">
+            <summary>
+            Specifies the foreign key value.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Data.Query.FromTable">
+            <summary>
+            Specifies the table name.
+            </summary>
+            <remarks>Table name is used by the remote adaptors.</remarks>
+        </member>
+        <member name="P:Syncfusion.Blazor.Data.Query.Lookups">
+            <summary>
+            Specifies the lookup table names.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.Data.Query.Expands">
             <summary>
             Specifies the relation table/resource names.
             </summary>
@@ -8430,28 +8457,6 @@
         <member name="M:Syncfusion.Blazor.Data.Query.RequiresCount">
             <summary>
             Specifies that count is expected in remote service response.
-            </summary>
-            <returns>Query</returns>
-        </member>
-        <member name="M:Syncfusion.Blazor.Data.Query.Sort(System.String,System.String)">
-            <summary>
-            Sorts the data source.
-            </summary>
-            <param name="name">Specifies the sort name.</param>
-            <param name="direction">Specifies the sort direction</param>
-            <returns>Query</returns>
-        </member>
-        <member name="M:Syncfusion.Blazor.Data.Query.Group(System.Collections.Generic.List{System.String},System.Collections.Generic.IDictionary{System.String,System.String})">
-            <summary>
-            Groups the data source
-            </summary>
-            <param name="fieldNames">Specifies the column names to group</param>
-            <param name="groupFormat">Specifies the group format</param>
-            <returns>Query</returns>
-        </member>
-        <member name="M:Syncfusion.Blazor.Data.Query.Group(System.String)">
-            <summary>
-          cted in remote service response.
             </summary>
             <returns>Query</returns>
         </member>
@@ -10929,11 +10934,6 @@
             Enables/Disable the Undo/Redo support.
             </summary>
         </member>
-        <member name="F:Syncfusion.Blazor.Diagrams.Wasm.DiagramConstraints.Tooltip">
-            <summary>
-            Enables/Disable Tooltip support.
-            </summary>
-        </member>
         <member name="F:Syncfusion.Blazor.Diagrams.Wasm.DiagramConstraints.UserInteraction">
             <summary>
             Enables/Disable UserInteraction support for the diagram.
@@ -10969,19 +10969,9 @@
             Enables/Disable Pan support the diagram.
             </summary>
         </member>
-        <member name="F:Syncfusion.Blazor.Diagrams.Wasm.DiagramConstraints.ZoomTextEdit">
-            <summary>
-            Enables/Disables zooming the text box while editing the text.
-            </summary>
-        </member>
         <member name="F:Syncfusion.Blazor.Diagrams.Wasm.DiagramConstraints.Virtualization">
             <summary>
             Enables/Disable Virtualization support the diagram.
-            </summary>
-        </member>
-        <member name="F:Syncfusion.Blazor.Diagrams.Wasm.DiagramConstraints.LineRouting">
-            <summary>
-            Enables/ Disable the line routing.
             </summary>
         </member>
         <member name="F:Syncfusion.Blazor.Diagrams.Wasm.DiagramConstraints.Default">
@@ -11450,14 +11440,9 @@
             The behavior and features of the ports can be enabled or disabled using the PortConstraints.
             </summary>
         </member>
-        <member name="F:Syncfusion.Blazor.Diagrams.Wasm.PortConstraints.Default">
+        <member name="F:Syncfusion.Blazor.Diagrams.Wasm.PortConstraints.None">
             <summary>
-            Enables all constraints for a port.
-            </summary>
-        </member>
-        <member name="F:Syncfusion.Blazor.Diagrams.Wasm.PortConstraints.Drag">
-            <summary>
-            Enables or disables port dragging.
+            Disables all the Port functionalities.
             </summary>
         </member>
         <member name="F:Syncfusion.Blazor.Diagrams.Wasm.PortConstraints.Draw">
@@ -11470,14 +11455,14 @@
             Enables or disables to connect only the target end of connector.
             </summary>
         </member>
-        <member name="F:Syncfusion.Blazor.Diagrams.Wasm.PortConstraints.None">
-            <summary>
-            Disables all the Port functionalities.
-            </summary>
-        </member>
         <member name="F:Syncfusion.Blazor.Diagrams.Wasm.PortConstraints.OutConnect">
             <summary>
             Enables or disables to connect only the source end of connector.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Diagrams.Wasm.PortConstraints.Default">
+            <summary>
+            Enables all constraints for a port.
             </summary>
         </member>
         <!-- Badly formed XML comment ignored for member "T:Syncfusion.Blazor.Diagrams.Wasm.Shapes" -->
@@ -11798,12 +11783,12 @@
         </member>
         <member name="F:Syncfusion.Blazor.Diagrams.Wasm.NodeConstraints.Shadow">
             <summary>
-            Enables or disables to display the node�s shadow.
+            Enables or disables to display the nodes shadow.
             </summary>
         </member>
         <member name="F:Syncfusion.Blazor.Diagrams.Wasm.NodeConstraints.PointerEvents">
             <summary>
-            Enables or disables the mouse pointer�s events when clicking with a mouse.
+            Enables or disables the mouse pointers events when clicking with a mouse.
             </summary>
         </member>
         <member name="F:Syncfusion.Blazor.Diagrams.Wasm.NodeConstraints.Delete">
@@ -12556,6 +12541,8 @@
             Sets the Hyperlink action for the cursor.
             </summary>
         </member>
+        <!-- Badly formed XML comment ignored for member "F:Syncfusion.Blazor.Diagrams.Wasm.Actions.Draw" -->
+        <!-- Badly formed XML comment ignored for member "F:Syncfusion.Blazor.Diagrams.Wasm.Actions.PortDraw" -->
         <member name="F:Syncfusion.Blazor.Diagrams.Wasm.DiagramTools.Default">
             <summary>
             Sets the drawing tools to default.
@@ -12581,6 +12568,16 @@
             It allows users to pan the diagram.
             </summary>
         </member>
+        <member name="F:Syncfusion.Blazor.Diagrams.Wasm.DiagramTools.DrawOnce">
+            <summary>
+            Enables/Disable DrawOnce support for the diagram.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Diagrams.Wasm.DiagramTools.ContinuousDraw">
+            <summary>
+            Enables/Disable ContinuousDraw support for the diagram.
+            </summary>
+        </member>
         <member name="T:Syncfusion.Blazor.Diagrams.Wasm.RubberBandSelectionMode">
             <summary>
             Specifies how to handle the selected items via rubber band selection.
@@ -12601,9 +12598,9 @@
             Specifies the visibility of the selector handles.
             </summary>
         </member>
-        <member name="F:Syncfusion.Blazor.Diagrams.Wasm.SelectorConstraints.All">
+        <member name="F:Syncfusion.Blazor.Diagrams.Wasm.SelectorConstraints.None">
             <summary>
-            Shows all handles of the selector.
+            Hides all the selector elements.
             </summary>
         </member>
         <member name="F:Syncfusion.Blazor.Diagrams.Wasm.SelectorConstraints.ConnectorSourceThumb">
@@ -12616,24 +12613,14 @@
             Shows the target thumb of the connector.
             </summary>
         </member>
-        <member name="F:Syncfusion.Blazor.Diagrams.Wasm.SelectorConstraints.None">
+        <member name="F:Syncfusion.Blazor.Diagrams.Wasm.SelectorConstraints.ResizeSouthEast">
             <summary>
-            Hides all the selector elements.
+            Shows the bottom right resize handle of the selector.
             </summary>
         </member>
-        <member name="F:Syncfusion.Blazor.Diagrams.Wasm.SelectorConstraints.ResizeAll">
+        <member name="F:Syncfusion.Blazor.Diagrams.Wasm.SelectorConstraints.ResizeSouthWest">
             <summary>
-            Shows all resize handles of the selector.
-            </summary>
-        </member>
-        <member name="F:Syncfusion.Blazor.Diagrams.Wasm.SelectorConstraints.ResizeEast">
-            <summary>
-            Shows the middle right resize handle of the selector.
-            </summary>
-        </member>
-        <member name="F:Syncfusion.Blazor.Diagrams.Wasm.SelectorConstraints.ResizeNorth">
-            <summary>
-            Shows the top center resize handle of the selector.
+            Shows the bottom left resize handle of the selector. 
             </summary>
         </member>
         <member name="F:Syncfusion.Blazor.Diagrams.Wasm.SelectorConstraints.ResizeNorthEast">
@@ -12646,24 +12633,24 @@
             Shows the top left resize handle of the selector.
             </summary>
         </member>
-        <member name="F:Syncfusion.Blazor.Diagrams.Wasm.SelectorConstraints.ResizeSouth">
+        <member name="F:Syncfusion.Blazor.Diagrams.Wasm.SelectorConstraints.ResizeEast">
             <summary>
-            Shows the bottom center resize handle of the selector.
-            </summary>
-        </member>
-        <member name="F:Syncfusion.Blazor.Diagrams.Wasm.SelectorConstraints.ResizeSouthEast">
-            <summary>
-            Shows the bottom right resize handle of the selector.
-            </summary>
-        </member>
-        <member name="F:Syncfusion.Blazor.Diagrams.Wasm.SelectorConstraints.ResizeSouthWest">
-            <summary>
-            Shows the bottom left resize handle of the selector. 
+            Shows the middle right resize handle of the selector.
             </summary>
         </member>
         <member name="F:Syncfusion.Blazor.Diagrams.Wasm.SelectorConstraints.ResizeWest">
             <summary>
             Shows the middle left resize handle of the selector.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Diagrams.Wasm.SelectorConstraints.ResizeSouth">
+            <summary>
+            Shows the bottom center resize handle of the selector.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Diagrams.Wasm.SelectorConstraints.ResizeNorth">
+            <summary>
+            Shows the top center resize handle of the selector.
             </summary>
         </member>
         <member name="F:Syncfusion.Blazor.Diagrams.Wasm.SelectorConstraints.Rotate">
@@ -12674,6 +12661,16 @@
         <member name="F:Syncfusion.Blazor.Diagrams.Wasm.SelectorConstraints.UserHandle">
             <summary>
              Shows/hides the user handles of the selector .
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Diagrams.Wasm.SelectorConstraints.All">
+            <summary>
+            Shows all handles of the selector.
+            </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Diagrams.Wasm.SelectorConstraints.ResizeAll">
+            <summary>
+            Shows all resize handles of the selector.
             </summary>
         </member>
         <member name="T:Syncfusion.Blazor.Diagrams.Wasm.ChangeType">
@@ -12730,6 +12727,11 @@
             <summary>
             Indicates the group is in progress.
             </summary>
+        </member>
+        <member name="F:Syncfusion.Blazor.Diagrams.Wasm.DiagramAction.DrawingTool">
+            <summary>
+            Indicates the diagram drawing tool is enabled
+             </summary>
         </member>
         <member name="F:Syncfusion.Blazor.Diagrams.Wasm.RealAction.MeasureDataJSCall">
             <summary>
@@ -13922,7 +13924,11 @@
             Redo - Sets the entry type as Redo
              </summary>
         </member>
-        <!-- Badly formed XML comment ignored for member "F:Syncfusion.Blazor.Diagrams.Wasm.EntryType.SizeChanged" -->
+        <member name="F:Syncfusion.Blazor.Diagrams.Wasm.EntryType.SizeChanged">
+            <summary>
+            SizeChanged - Sets the entry type as SizeChanged
+             </summary>
+        </member>
         <member name="T:Syncfusion.Blazor.Diagrams.Wasm.EntryCategory">
             <summary>
              Defines the entry category type
@@ -14536,6 +14542,11 @@
             <param name="endPoint"></param>
             <param name="source"></param>
             <returns></returns>
+        </member>
+        <member name="F:Syncfusion.Blazor.Diagrams.Wasm.NodeDrawingTool.prevPosition">
+            <summary>
+            Sets/Gets the previous mouse position
+            </summary>
         </member>
         <member name="T:Syncfusion.Blazor.Diagrams.Wasm.ZoomPanTool">
             <summary>
@@ -15998,6 +16009,11 @@
             Sets Child content for the diagram component
             </summary>
         </member>
+        <member name="P:Syncfusion.Blazor.Diagrams.Wasm.SfDiagramWasm.Constraints">
+            <summary>
+            Constraints are used to enable/disable certain behaviors of the diagram.
+            </summary>
+        </member>
         <member name="P:Syncfusion.Blazor.Diagrams.Wasm.SfDiagramWasm.SnapSettings">
             <summary>
             Defines the gridlines and defines how and when the objects have to be snapped
@@ -16110,7 +16126,7 @@
         </member>
         <member name="P:Syncfusion.Blazor.SymbolPalette.Wasm.SfSymbolPaletteWasm.SymbolPaletteTemplates">
             <summary>
-            Defines the Digaram templates
+            Defines the Symbol Palette templates
             </summary>
         </member>
         <member name="P:Syncfusion.Blazor.SymbolPalette.Wasm.SfSymbolPaletteWasm.Palettes">
@@ -16155,12 +16171,12 @@
         </member>
         <member name="P:Syncfusion.Blazor.SymbolPalette.Wasm.SymbolInfo.Height">
             <summary>
-            Defines the width of the symbol to be drawn over the palette
+            Defines the height of the symbol to be drawn over the palette
             </summary>
         </member>
         <member name="P:Syncfusion.Blazor.SymbolPalette.Wasm.SymbolInfo.Width">
             <summary>
-            Defines the height of the symbol to be drawn over the palette
+            Defines the width of the symbol to be drawn over the palette
             </summary>
         </member>
         <member name="P:Syncfusion.Blazor.SymbolPalette.Wasm.SymbolInfo.Fit">
@@ -16193,42 +16209,22 @@
             Defines how to wrap the text
             </summary>
         </member>
-        <member name="P:Syncfusion.Blazor.SymbolPalette.Wasm.SymbolPreview.Width">
-            <summary>
-            Sets the preview width of the symbols
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Blazor.SymbolPalette.Wasm.SymbolPreview.Height">
-            <summary>
-            Sets the preview height of the symbols
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Blazor.SymbolPalette.Wasm.SymbolDragSize.Width">
-            <summary>
-            Sets the preview width of the symbols
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Blazor.SymbolPalette.Wasm.SymbolDragSize.Height">
-            <summary>
-            Sets the drag height of the symbols
-            </summary>
-        </member>
-        <member name="T:Syncfusion.Blazor.SymbolPalette.Wasm.IPaletteSelectionChangeArgs">
+        <member name="T:Syncfusion.Blazor.SymbolPalette.Wasm.PaletteSelectionChangeArgs">
             <summary>
             Notifies when the selection objects change in the symbol palette.
             </summary>
         </member>
-        <member name="F:Syncfusion.Blazor.SymbolPalette.Wasm.IPaletteSelectionChangeArgs.OldValue">
+        <member name="F:Syncfusion.Blazor.SymbolPalette.Wasm.PaletteSelectionChangeArgs.OldValue">
             <summary>
             returns the old palette item that is selected.
             </summary>
         </member>
-        <member name="F:Syncfusion.Blazor.SymbolPalette.Wasm.IPaletteSelectionChangeArgs.NewValue">
+        <member name="F:Syncfusion.Blazor.SymbolPalette.Wasm.PaletteSelectionChangeArgs.NewValue">
             <summary>
             returns the new palette item that is selected.
             </summary>
         </member>
-        <member name="M:Syncfusion.Blazor.SymbolPalette.Wasm.IPaletteSelectionChangeArgs.Equals(Syncfusion.Blazor.SymbolPalette.Wasm.IPaletteSelectionChangeArgs)">
+        <member name="M:Syncfusion.Blazor.SymbolPalette.Wasm.PaletteSelectionChangeArgs.Equals(Syncfusion.Blazor.SymbolPalette.Wasm.PaletteSelectionChangeArgs)">
             <summary>
             Indicates whether the PaletteSelectionChange object is equal to another object of the same type. 
             </summary>
@@ -20841,30 +20837,7 @@
             <exclude/>
         </member>
         <member name="P:Syncfusion.Blazor.Inputs.Internal.SfInputBase.SpinButton">
-             <summary>
-             Specifies a boolean value that enable or disable the spin button on the component.
-             </summary>
-            <exclude/>
-        </member>
-        <member name="P:Syncfusion.Blazor.Inputs.Internal.SfInputBase.ContainerClass">
-             <summary>
-             Specifies the class value that is appended to container of TextBox.
-             </summary>
-            <exclude/>
-        </member>
-        <member name="P:Syncfusion.Blazor.Inputs.Internal.SfInputBase.ValueTemplate">
-             <summary>
-             Accepts the template design and assigns it to the selected list item in the input element of the component.
-             </summary>
-            <exclude/>
-        </member>
-        <member name="P:Syncfusion.Blazor.Inputs.Internal.SfInputBase.IsValueTemplate">
-             <summary>
-             Specifies a boolean value that indicates whether the value template is displayed in TextBox.
-             </summary>
-            <exclude/>
-        </member>
-        <member name="P:Syncfusion.Blazor.Inputs.Internal.SfInputBase.RootClass">
+             <summar.Internal.SfInputBase.RootClass">
              <summary>
              Gets or Set the component class to element.
              </summary>
@@ -20961,6 +20934,32 @@
         <member name="T:Syncfusion.Blazor.Inputs.Internal.IUploadFileList">
             <exclude/>
         </member>
+    nstructor for initializing the component adaptor
+             </summary>
+             <param name="parent">Uploader arguments</param>
+            <exclude/>
+        </member>
+        <member name="T:Syncfusion.Blazor.Inputs.Internal.UploaderStreamReader.UploadData">
+            <exclude/>
+        </member>
+        <member name="P:Syncfusion.Blazor.Inputs.Internal.UploadFileList.UploaderFileInterop">
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Inputs.Internal.UploadReadFile.GetFileReader">
+            <exclude/>
+        </member>
+        <member name="T:Syncfusion.Blazor.Inputs.Internal.IUploadReadFile">
+            <exclude/>
+        </member>
+        <member name="M:Syncfusion.Blazor.Inputs.Internal.IUploadReadFile.GetFileReader">
+            <summary>
+            Opens a stream to read the file.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Syncfusion.Blazor.Inputs.Internal.IUploadFileList">
+            <exclude/>
+        </member>
         <member name="M:Syncfusion.Blazor.Inputs.Internal.IUploadFileList.FileListData(Microsoft.AspNetCore.Components.ElementReference)">
             <summary>
             Register for drop events on the source element
@@ -21022,31 +21021,7 @@
             </summary>
         </member>
         <member name="P:Syncfusion.Blazor.Inputs.SfColorPicker.Inline">
-            <summary>
-            It is used to render the ColorPicker component as inline.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Blazor.Inputs.SfColorPicker.Locale">
-            <summary>
-            Overrides the global culture and localization value for this component. Default global culture is 'en-US'.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Blazor.Inputs.SfColorPicker.Mode">
-            <summary>
-            It is used to render the ColorPicker with the specified mode.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Blazor.Inputs.SfColorPicker.ModeSwitcher">
-            <summary>
-            It is used to show / hide the mode switcher button of ColorPicker component.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Blazor.Inputs.SfColorPicker.NoColor">
-            <summary>
-            It is used to enable / disable the no color option of ColorPicker component.
-            </summary>
-        </member>
-        <member name="P:Syncfusion.Blazor.Inputs.SfColorPicker.PresetColors">
+             <member name="P:Syncfusion.Blazor.Inputs.SfColorPicker.PresetColors">
             <summary>
             It is used to load custom colors to palette.
             </summary>
@@ -35945,6 +35920,34 @@
         <member name="P:Syncfusion.Blazor.SplitButtons.DropDownMenuItem.Disabled">
             <summary>
             Used to enable or disable the action items.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.DropDownMenuItem.Text">
+            <summary>
+            Specifies text for item.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.DropDownMenuItem.Url">
+            <summary>
+            Specifies url for item that creates the anchor link to navigate to the url provided.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.DropDownMenuItem.Id">
+            <summary>
+            Specifies unique id for item.
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.DropDownMenuItem.HtmlAttributes">
+            <summary>
+            You can add the additional HTML attributes such as style, title etc., to the item
+            </summary>
+        </member>
+        <member name="P:Syncfusion.Blazor.SplitButtons.DropDownMenuItems.ChildContent">
+            <exclude />
+        </member>
+    </members>
+</doc>
+.
             </summary>
         </member>
         <member name="P:Syncfusion.Blazor.SplitButtons.DropDownMenuItem.Text">
