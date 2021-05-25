@@ -68,3 +68,20 @@ function loadFile(file) {
 function loadDiagram(event) {
     return event.target.result.toString();
 }
+//function enablePropertyCheckBox(id, value) {
+//    var element = document.getElementById(id);
+//    if (value) {
+//        if (id == "gradientStyle") {
+//            element.className = 'row db-prop-row db-gradient-style-show';
+//        } else {
+//            element.style.display = '';
+//        }
+//    }
+//    else {
+//        if (id == "gradientStyle") {
+//            element.className = 'row db-prop-row db-gradient-style-hide';
+//        } else {
+//            element.style.display = 'none';
+//        }
+//    }
+//}
